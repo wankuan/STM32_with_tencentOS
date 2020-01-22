@@ -29,8 +29,10 @@ include_directories(
     APP/inc
     BSP/inc
     CMSIS/inc
+    OS/osal/cmsis_os
     STM32F4xx_HAL_Driver/Inc
-    STM32F4xx_HAL_Driver/Inc/Legacy
+    # OS/arch/arm/arm-v7m/common/include
+    # STM32F4xx_HAL_Driver/Inc/Legacy
 )
 set_property(SOURCE Start_Up/startup_stm32f429xx.s PROPERTY LANGUAGE C)
 
@@ -58,7 +60,7 @@ set(CMAKE_EXE_LINKER_FLAGS
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/target)
 
 add_executable(${PROJECT_NAME}.elf ${SRCS})
-target_link_libraries(${PROJECT_NAME}.elf PUBLIC STM32F4_HAL TencentOS).
+target_link_libraries(${PROJECT_NAME}.elf PUBLIC STM32F4_HAL TencentOS)
 set(ELF_FILE ${EXECUTABLE_OUTPUT_PATH}/${PROJECT_NAME}.elf)
 set(HEX_FILE ${EXECUTABLE_OUTPUT_PATH}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${EXECUTABLE_OUTPUT_PATH}/${PROJECT_NAME}.bin)

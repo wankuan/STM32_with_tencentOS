@@ -5,6 +5,8 @@ file(GLOB sources_core kernel/core/*.c)
 set_property(SOURCE arch/arm/arm-v7m/cortex-m4/gcc/port_s.S PROPERTY LANGUAGE C)
 set(sources
     arch/arm/arm-v7m/cortex-m4/gcc/port_c.c
+    arch/arm/arm-v7m/common/tos_cpu.c
+    arch/arm/arm-v7m/common/tos_fault.c
     arch/arm/arm-v7m/cortex-m4/gcc/port_s.S
     osal/cmsis_os/cmsis_os.c
     ${sources_core}

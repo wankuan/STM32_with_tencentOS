@@ -1,11 +1,11 @@
 /**
   ******************************************************************************
-  * @file    Templates/Src/stm32f4xx_it.c 
+  * @file    Templates/Src/stm32f4xx_it.c
   * @author  MCD Application Team
   * @version V1.2.5
   * @date    04-November-2016
   * @brief   Main Interrupt Service Routines.
-  *          This file provides template for all exceptions handler and 
+  *          This file provides template for all exceptions handler and
   *          peripherals interrupt service routine.
   ******************************************************************************
   * @attention
@@ -40,6 +40,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
 #include "main.h"
+#include "tos_k.h"
 /** @addtogroup STM32F4xx_HAL_Examples
   * @{
   */
@@ -147,9 +148,9 @@ void DebugMon_Handler(void)
   * @param  None
   * @retval None
   */
-//void PendSV_Handler(void)
-//{
-//}
+__weak void PendSV_Handler(void)
+{
+}
 
 /**
   * @brief  This function handles SysTick Handler.
@@ -177,17 +178,17 @@ void SysTick_Handler(void)
 //    switch(GPIO_Pin)
 //    {
 //        case GPIO_PIN_0:
-//        if(KEY1==1) 
+//        if(KEY1==1)
 //						{
 
 //						}
 //						while(KEY1);
 //            break;
 //        case GPIO_PIN_10:
-//            if(KEY2==1) 
+//            if(KEY2==1)
 //						{
-//						
-//		
+//
+//
 //						}
 //						while(KEY2);
 //            break;
@@ -215,7 +216,7 @@ void SysTick_Handler(void)
 
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
