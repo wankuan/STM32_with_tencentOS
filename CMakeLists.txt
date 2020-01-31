@@ -13,6 +13,7 @@ set(CMAKE_C_FLAGS_RELEASE "-O3")
 add_definitions(
 -DUSE_HAL_DRIVER
 -DSTM32F429xx
+-DUSE_FULL_ASSERT
 )
 
 

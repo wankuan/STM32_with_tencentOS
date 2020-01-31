@@ -104,7 +104,7 @@ void delay_ms(u16 nms)
 }
 
 
-void BSP_Init(void)
+void bsp_init(void)
 {
 HAL_Init();                     //初始化HAL库
 HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_2);
@@ -119,6 +119,7 @@ Stm32_Clock_Init(360,25,2,8); 		//设置时钟,180Mhz
 //line：指向在文件中的行数
 void assert_failed(uint8_t* file, uint32_t line)
 {
+    printf("Wrong parameters value: file %s on line %d\n", file, line);
 	while (1)
 	{
 	}

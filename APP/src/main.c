@@ -39,8 +39,10 @@ void task2(void *pdata)
 int main(void)
 {
 	bsp_init();
+    uart_init();
+    delay_ms(200);
 	led_init();
-	uart_init();
+
 	uart_rx_t.status = 0;
 	static float float_num = 0.00f;
     osKernelInitialize(); //TOS Tiny kernel initialize

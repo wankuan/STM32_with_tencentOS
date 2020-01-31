@@ -159,7 +159,13 @@ __weak void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-  HAL_IncTick();
+    HAL_IncTick();
+    if(tos_knl_is_running())
+    {
+        tos_knl_irq_enter();
+        tos_tick_handler();
+        tos_knl_irq_leave();
+    }
 }
 
 

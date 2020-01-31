@@ -3,7 +3,7 @@
 void led_init(void)
 {
 	GPIO_InitTypeDef gpio_t;
-	 
+
 	__GPIOI_CLK_ENABLE();
 	gpio_t.Pin = LED_G_PIN;
 	gpio_t.Mode = GPIO_MODE_OUTPUT_PP;
